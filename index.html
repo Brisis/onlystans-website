@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>OnlyStans – Get Paid in Crypto for Exclusive Content</title>
+  <meta
+    name="description"
+    content="Monetize your content with OnlyStans. A Solana-powered creator platform for subscriptions, tips, and paid posts using USDC with fast, low-fee payouts."
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/icon.png" type="image/svg+xml">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#b9e5fc',
+              300: '#7dd3fc',
+              400: '#4EACE9',
+              500: '#38bdf8',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gradient-text {
+      background: linear-gradient(135deg, #4EACE9 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(78, 172, 233, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(78, 172, 233, 0.15);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #4EACE9 0%, #38bdf8 100%);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(78, 172, 233, 0.4);
+    }
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    @keyframes floating {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-2">
+          <img src="assets/logo.png" alt="OnlyStans Logo" width="150px">
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#features" class="text-gray-600 hover:text-brand-400 transition-colors font-medium">Features</a>
+          <a href="#how-it-works" class="text-gray-600 hover:text-brand-400 transition-colors font-medium">How It Works</a>
+          <a href="#creators" class="text-gray-600 hover:text-brand-400 transition-colors font-medium">For Creators</a>
+          <a href="#faq" class="text-gray-600 hover:text-brand-400 transition-colors font-medium">FAQ</a>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="flex items-center">
+          <a href="#" class="btn-primary px-5 py-2.5 rounded-full text-white font-semibold text-sm inline-flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download App
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" onclick="toggleMobileMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#features" class="block py-2 text-gray-600 hover:text-brand-400 font-medium">Features</a>
+        <a href="#how-it-works" class="block py-2 text-gray-600 hover:text-brand-400 font-medium">How It Works</a>
+        <a href="#creators" class="block py-2 text-gray-600 hover:text-brand-400 font-medium">For Creators</a>
+        <a href="#faq" class="block py-2 text-gray-600 hover:text-brand-400 font-medium">FAQ</a>
+        <a href="#" class="block py-3 mt-2 btn-primary text-center rounded-full text-white font-semibold">
+          Download App
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative pt-28 md:pt-36 pb-20 md:pb-32 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2000&q=80" alt="" class="w-full h-full object-cover opacity-5">
+    </div>
+    <div class="absolute inset-0 hero-gradient"></div>
+    <div class="absolute top-20 right-0 w-96 h-96 bg-brand-400/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Hero Content -->
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center px-4 py-2 rounded-full bg-brand-50 border border-brand-200 mb-6">
+            <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+            <span class="text-sm font-medium text-brand-700">Powered by Solana</span>
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            Get Paid in <span class="gradient-text">Crypto</span> for Your Content
+          </h1>
+          
+          <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
+            The creator subscription platform where fans pay in USDC. Instant payments, near-zero fees, and full control of your earnings.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+            <a href="#" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              Download App
+            </a>
+            <a href="#how-it-works" class="px-8 py-4 rounded-full bg-white border-2 border-gray-200 text-gray-700 font-semibold text-lg hover:border-brand-400 hover:text-brand-400 transition-all inline-flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              See How It Works
+            </a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-gray-900">$2M+</div>
+              <div class="text-sm text-gray-500">Paid to Creators</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-gray-900">10K+</div>
+              <div class="text-sm text-gray-500">Active Creators</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-gray-900">&lt;1%</div>
+              <div class="text-sm text-gray-500">Transaction Fees</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image/Visual -->
+        <div class="relative lg:pl-8">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Phone Mockup -->
+            <div class="relative bg-gray-900 rounded-[3rem] p-3 shadow-2xl floating">
+              <div class="bg-gray-800 rounded-[2.5rem] overflow-hidden">
+                <!-- Phone Screen -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 aspect-[9/16] p-4">
+                  <!-- App Header -->
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-2">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Creator" class="w-8 h-8 rounded-full object-cover">
+                      <div>
+                        <div class="text-xs font-semibold text-gray-900">@creativemaya</div>
+                        <div class="text-[10px] text-gray-500">12.5K subscribers</div>
+                      </div>
+                    </div>
+                    <div class="px-3 py-1 bg-brand-400 rounded-full text-[10px] font-semibold text-white">Subscribe</div>
+                  </div>
+                  
+                  <!-- Content Cards -->
+                  <div class="space-y-3">
+                    <div class="bg-white rounded-2xl p-3 shadow-sm">
+                      <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=400&q=80" alt="Content" class="w-full h-24 rounded-xl mb-2 object-cover">
+                      <div class="text-[10px] text-gray-600">Exclusive behind-the-scenes content 🎬</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-3 shadow-sm">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                          <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                            <svg class="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                          </div>
+                          <span class="text-[10px] font-medium text-gray-700">Tip received!</span>
+                        </div>
+                        <span class="text-[10px] font-bold text-green-600">+$25 USDC</span>
+                      </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-3 shadow-sm">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Subscriber" class="w-6 h-6 rounded-full object-cover">
+                          <span class="text-[10px] font-medium text-gray-700">New subscriber</span>
+                        </div>
+                        <span class="text-[10px] font-bold text-brand-600">+$9.99/mo</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Phone Notch -->
+              <div class="absolute top-6 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-900 rounded-full"></div>
+            </div>
+            
+            <!-- Floating Elements -->
+            <div class="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-xs text-gray-500">Instant Payout</div>
+                  <div class="text-sm font-bold text-gray-900">$1,250.00</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="absolute -bottom-2 -left-4 bg-white rounded-2xl p-3 shadow-xl border border-gray-100">
+              <div class="flex items-center space-x-2">
+                <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="w-6 h-6">
+                <span class="text-xs font-semibold text-gray-700">Powered by Solana</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By / Logos -->
+  <section class="py-12 border-y border-gray-100 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-50 via-white to-gray-50"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-sm text-gray-500 mb-8">Trusted by creators and integrated with</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-60">
+        <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="h-8 md:h-10">
+        <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" alt="USDC" class="h-8 md:h-10">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-sm">
+              <svg fill="none" viewBox="0 0 24 24" width="24px" height="24px" stroke-linecap="round" stroke-linejoin="round" class="_1vtegxp6"><path fill="currentColor" fill-rule="evenodd" d="M9.78 16.95c-1.26 1.928-3.37 4.37-6.177 4.37C2.276 21.32 1 20.774 1 18.4 1 12.356 9.252 3 16.909 3 21.265 3 23 6.022 23 9.454c0 4.405-2.858 9.442-5.7 9.442-.902 0-1.344-.496-1.344-1.281 0-.205.034-.427.102-.666-.97 1.656-2.841 3.193-4.594 3.193-1.276 0-1.923-.802-1.923-1.93 0-.41.085-.836.239-1.263m6.595-7.615c0 1-.59 1.5-1.25 1.5-.67 0-1.25-.5-1.25-1.5s.58-1.5 1.25-1.5c.66 0 1.25.5 1.25 1.5m3.75 0c0 1-.59 1.5-1.25 1.5-.67 0-1.25-.5-1.25-1.5s.58-1.5 1.25-1.5c.66 0 1.25.5 1.25 1.5" clip-rule="evenodd"></path></svg>
+            </span>
+          </div>
+          <span class="font-semibold text-gray-700">Phantom</span>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 md:py-28 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-[0.02]">
+      <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=2000&q=80" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-brand-400/5 to-transparent rounded-full blur-3xl"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Why Creators Choose <span class="gradient-text">OnlyStans</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Built for the modern creator economy. Fast payments, low fees, and complete financial freedom.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="card-hover bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Instant Payments</h3>
+          <p class="text-gray-600">
+            Get paid in seconds, not days. Solana transactions settle in under a second, so you can access your earnings immediately.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="card-hover bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-400 to-cyan-500 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Near-Zero Fees</h3>
+          <p class="text-gray-600">
+            Keep more of what you earn. Transaction fees on Solana cost fractions of a penny, compared to 3-5% on traditional platforms.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="card-hover bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-violet-500 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">USDC Stability</h3>
+          <p class="text-gray-600">
+            Get paid in USDC, a dollar-pegged stablecoin. No crypto volatility—1 USDC always equals $1 USD.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="card-hover bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-400 to-rose-500 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Global Reach</h3>
+          <p class="text-gray-600">
+            Accept payments from fans worldwide without bank restrictions or currency conversion fees.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="card-hover bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Tips & Subscriptions</h3>
+          <p class="text-gray-600">
+            Multiple revenue streams. Set subscription tiers, receive tips on posts, and unlock exclusive content for paying fans.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="card-hover bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-400 to-blue-500 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Self-Custody</h3>
+          <p class="text-gray-600">
+            Your wallet, your money. Connect your own Solana wallet and maintain full control over your earnings at all times.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-20 md:py-28 relative overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80" alt="" class="w-full h-full object-cover opacity-[0.03]">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Get Started in Minutes
+        </h2>
+        <p class="text-lg text-gray-600">
+          Whether you're a creator or a fan, getting started is simple and fast.
+        </p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex justify-center mb-12">
+        <div class="inline-flex bg-white rounded-full p-1.5 shadow-sm border border-gray-200">
+          <button onclick="showTab('creators')" id="tab-creators" class="px-6 py-2.5 rounded-full text-sm font-semibold transition-all bg-brand-400 text-white">
+            For Creators
+          </button>
+          <button onclick="showTab('fans')" id="tab-fans" class="px-6 py-2.5 rounded-full text-sm font-semibold transition-all text-gray-600 hover:text-gray-900">
+            For Fans
+          </button>
+        </div>
+      </div>
+
+      <!-- Creators Steps -->
+      <div id="content-creators" class="grid md:grid-cols-3 gap-8">
+        <div class="relative">
+          <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 h-full">
+            <div class="w-12 h-12 rounded-full bg-brand-400 text-white font-bold text-xl flex items-center justify-center mb-6">1</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Download & Sign Up</h3>
+            <p class="text-gray-600">Download the app and create your account. Update your profile details, and add your Solana address in Settings</p>
+          </div>
+          <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-brand-200"></div>
+        </div>
+
+        <div class="relative">
+          <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 h-full">
+            <div class="w-12 h-12 rounded-full bg-brand-400 text-white font-bold text-xl flex items-center justify-center mb-6">2</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Set Your Prices</h3>
+            <p class="text-gray-600">Choose your monthly subscription price in USDC. Also set tip if you want to enable tips on your posts.</p>
+          </div>
+          <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-brand-200"></div>
+        </div>
+
+        <div class="relative">
+          <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 h-full">
+            <div class="w-12 h-12 rounded-full bg-brand-400 text-white font-bold text-xl flex items-center justify-center mb-6">3</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Start Earning</h3>
+            <p class="text-gray-600">Share your profile, post exclusive content, and watch the USDC flow directly into your wallet. It's that simple.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fans Steps -->
+      <div id="content-fans" class="hidden grid md:grid-cols-3 gap-8">
+        <div class="relative">
+          <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 h-full">
+            <div class="w-12 h-12 rounded-full bg-brand-400 text-white font-bold text-xl flex items-center justify-center mb-6">1</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Download & Connect</h3>
+            <p class="text-gray-600">Download the app, set up Phantom wallet, load some USDC, and enjoy exclusive content.</p>
+          </div>
+          <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-brand-200"></div>
+        </div>
+
+        <div class="relative">
+          <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 h-full">
+            <div class="w-12 h-12 rounded-full bg-brand-400 text-white font-bold text-xl flex items-center justify-center mb-6">2</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Find Creators</h3>
+            <p class="text-gray-600">Browse and discover creators you love. Preview their public content and check their subscription offerings.</p>
+          </div>
+          <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-brand-200"></div>
+        </div>
+
+        <div class="relative">
+          <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 h-full">
+            <div class="w-12 h-12 rounded-full bg-brand-400 text-white font-bold text-xl flex items-center justify-center mb-6">3</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Subscribe & Tip</h3>
+            <p class="text-gray-600">Subscribe to unlock exclusive content or send tips to show appreciation. Payments are instant and secure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Creators Section -->
+  <section id="creators" class="py-20 md:py-28 relative overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&w=2000&q=80" alt="" class="w-full h-full object-cover opacity-[0.04]">
+    </div>
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-brand-400/10 to-transparent rounded-full blur-3xl"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            Built for Creators Who Want <span class="gradient-text">Financial Freedom</span>
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Traditional platforms take up to 20% of your earnings and make you wait weeks for payouts. OnlyStans puts you in control.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Keep 95%+ of Your Earnings</h4>
+                <p class="text-gray-600 text-sm">Only a tiny platform fee. No credit card processing fees eating into your income.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">No Minimum Payouts</h4>
+                <p class="text-gray-600 text-sm">Withdraw any amount, anytime. Your earnings go directly to your wallet.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">No Bank Account Required</h4>
+                <p class="text-gray-600 text-sm">All you need is a Solana wallet. Perfect for creators worldwide.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Real-Time Analytics</h4>
+                <p class="text-gray-600 text-sm">Track subscribers, tips, and earnings with a beautiful creator dashboard.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <a href="#" class="btn-primary px-8 py-4 rounded-full text-white font-semibold inline-flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              Download App
+            </a>
+          </div>
+        </div>
+
+        <!-- Earnings Comparison -->
+        <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+          <!-- Banner Image -->
+          <div class="relative h-32 bg-gradient-to-r from-brand-400 to-cyan-500">
+            <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80" alt="Earnings" class="w-full h-full object-cover mix-blend-overlay opacity-50">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <div class="text-white/80 text-sm font-medium">Keep More of What You Earn</div>
+                <div class="text-white text-2xl font-bold">95%+ Goes to You</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="p-8">
+            <h3 class="text-lg font-bold text-gray-900 mb-6 text-center">Your Earnings: OnlyStans vs Traditional</h3>
+          
+          <div class="space-y-6">
+            <!-- $100 Example -->
+            <div class="bg-gray-50 rounded-2xl p-6">
+              <div class="text-sm text-gray-500 mb-3">If you earn $100/month</div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                  <div class="text-xs text-gray-500 mb-1">Traditional Platform</div>
+                  <div class="text-2xl font-bold text-gray-400">$80</div>
+                  <div class="text-xs text-red-500">-20% fees</div>
+                </div>
+                <div class="bg-gradient-to-br from-brand-50 to-cyan-50 rounded-xl p-4 border border-brand-200">
+                  <div class="text-xs text-brand-600 mb-1">OnlyStans</div>
+                  <div class="text-2xl font-bold text-brand-600">$99+</div>
+                  <div class="text-xs text-green-600">~1% fees</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- $1000 Example -->
+            <div class="bg-gray-50 rounded-2xl p-6">
+              <div class="text-sm text-gray-500 mb-3">If you earn $1,000/month</div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                  <div class="text-xs text-gray-500 mb-1">Traditional Platform</div>
+                  <div class="text-2xl font-bold text-gray-400">$800</div>
+                  <div class="text-xs text-red-500">-$200 in fees</div>
+                </div>
+                <div class="bg-gradient-to-br from-brand-50 to-cyan-50 rounded-xl p-4 border border-brand-200">
+                  <div class="text-xs text-brand-600 mb-1">OnlyStans</div>
+                  <div class="text-2xl font-bold text-brand-600">$990+</div>
+                  <div class="text-xs text-green-600">Save $190+</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- $10000 Example -->
+            <div class="bg-gray-50 rounded-2xl p-6">
+              <div class="text-sm text-gray-500 mb-3">If you earn $10,000/month</div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                  <div class="text-xs text-gray-500 mb-1">Traditional Platform</div>
+                  <div class="text-2xl font-bold text-gray-400">$8,000</div>
+                  <div class="text-xs text-red-500">-$2,000 in fees</div>
+                </div>
+                <div class="bg-gradient-to-br from-brand-50 to-cyan-50 rounded-xl p-4 border border-brand-200">
+                  <div class="text-xs text-brand-600 mb-1">OnlyStans</div>
+                  <div class="text-2xl font-bold text-brand-600">$9,900+</div>
+                  <div class="text-xs text-green-600">Save $1,900+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 md:py-28 relative overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-400/5 rounded-full blur-3xl"></div>
+    
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-gray-600">
+          Everything you need to know about OnlyStans.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left">
+            <span class="font-semibold text-gray-900">What is USDC and why do you use it?</span>
+            <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5">
+            <p class="text-gray-600">USDC is a stablecoin pegged to the US dollar, meaning 1 USDC always equals $1 USD. Unlike volatile cryptocurrencies like Bitcoin, your earnings maintain their value. It's the best of both worlds: the speed and low fees of crypto with the stability of traditional currency.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left">
+            <span class="font-semibold text-gray-900">Do I need crypto experience to use OnlyStans?</span>
+            <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5">
+            <p class="text-gray-600">Not at all! We've made it as simple as possible. You just need to download a wallet app like Phantom (it's free), and we guide you through the setup. Once connected, payments happen automatically—you don't need to understand blockchain technology.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left">
+            <span class="font-semibold text-gray-900">How do I convert USDC to regular money?</span>
+            <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5">
+            <p class="text-gray-600">You can convert USDC to your local currency through exchanges like Coinbase, Kraken, or Binance. Many also support direct bank transfers. Some creators also use services like Ramp or MoonPay for instant off-ramps to their bank account.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left">
+            <span class="font-semibold text-gray-900">What are the platform fees?</span>
+            <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5">
+            <p class="text-gray-600">OnlyStans charges a small platform fee of just $0.05 per transaction. Solana network fees are typically less than $0.001. Compare this to traditional platforms that take 20% of your earnings plus payment processing fees!</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left">
+            <span class="font-semibold text-gray-900">Is my content safe and private?</span>
+            <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5">
+            <p class="text-gray-600">Absolutely. Your exclusive content is only visible to paying subscribers. We use industry-standard encryption and security measures. Plus, with crypto payments, there's no sensitive banking information to protect—it's inherently more private.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left">
+            <span class="font-semibold text-gray-900">Can fans subscribe without owning crypto?</span>
+            <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5">
+            <p class="text-gray-600">Yes! Fans can easily buy USDC with a credit card directly through wallet apps like Phantom using services like MoonPay. The whole process takes just a few minutes, even for complete crypto beginners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 md:py-28 bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-brand-400 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-cyan-400 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Ready to Start Earning in Crypto?
+      </h2>
+      <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+        Join thousands of creators who are keeping more of their earnings with OnlyStans. Download the app and get started in minutes.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#" class="btn-primary px-10 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center justify-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          Download for Android
+        </a>
+        <a href="#" class="px-10 py-4 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white font-semibold text-lg hover:bg-white/20 transition-all inline-flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" fill="url(#paint0_linear_87_7225)"/>
+            <path d="M22.9866 10.2088C23.1112 9.40332 22.3454 8.76755 21.6292 9.082L7.36482 15.3448C6.85123 15.5703 6.8888 16.3483 7.42147 16.5179L10.3631 17.4547C10.9246 17.6335 11.5325 17.541 12.0228 17.2023L18.655 12.6203C18.855 12.4821 19.073 12.7665 18.9021 12.9426L14.1281 17.8646C13.665 18.3421 13.7569 19.1512 14.314 19.5005L19.659 22.8523C20.2585 23.2282 21.0297 22.8506 21.1418 22.1261L22.9866 10.2088Z" fill="white"/>
+            <defs>
+            <linearGradient id="paint0_linear_87_7225" x1="16" y1="2" x2="16" y2="30" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#37BBFE"/>
+            <stop offset="1" stop-color="#007DBB"/>
+            </linearGradient>
+            </defs>
+          </svg>
+          Telegram Chat
+        </a>
+      </div>
+      
+      <p class="mt-8 text-sm text-gray-400">
+        Free to download • Available on Android at the moment • iOS coming soon
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  
+
+  <script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Tab switching
+    function showTab(tab) {
+      const creatorsTab = document.getElementById('tab-creators');
+      const fansTab = document.getElementById('tab-fans');
+      const creatorsContent = document.getElementById('content-creators');
+      const fansContent = document.getElementById('content-fans');
+
+      if (tab === 'creators') {
+        creatorsTab.classList.add('bg-brand-400', 'text-white');
+        creatorsTab.classList.remove('text-gray-600');
+        fansTab.classList.remove('bg-brand-400', 'text-white');
+        fansTab.classList.add('text-gray-600');
+        creatorsContent.classList.remove('hidden');
+        fansContent.classList.add('hidden');
+      } else {
+        fansTab.classList.add('bg-brand-400', 'text-white');
+        fansTab.classList.remove('text-gray-600');
+        creatorsTab.classList.remove('bg-brand-400', 'text-white');
+        creatorsTab.classList.add('text-gray-600');
+        fansContent.classList.remove('hidden');
+        creatorsContent.classList.add('hidden');
+      }
+    }
+
+    // FAQ accordion
+    function toggleFaq(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('svg');
+      
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Close mobile menu if open
+          document.getElementById('mobile-menu').classList.add('hidden');
+        }
+      });
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 10) {
+        nav.classList.add('shadow-sm');
+      } else {
+        nav.classList.remove('shadow-sm');
+      }
+    });
+  </script>
+
+</body>
+</html>
