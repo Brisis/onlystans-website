@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlyStans | Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/icon.png" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; margin: 0; }
+
+        /* INCREASED WIDTH: Matching the Login UI for more space */
+        .app-shell {
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .error-text {
+            color: #ef4444;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        input:invalid+.error-text {
+            display: block;
+        }
+
+        /* Left side branding styles */
+        .info-panel {
+            background: linear-gradient(-45deg, #00aff0, #0056b3, #000000);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+    </style>
+</head>
+
+<body class="antialiased text-gray-800 bg-gray-50">
+
+    <div class="flex min-h-screen">
+        
+        <section class="hidden md:flex md:w-1/2 lg:w-[55%] info-panel items-center justify-center p-12 text-white">
+            <div class="max-w-xl">
+                <img src="assets/images/logo.png" alt="OnlyStans" class="h-12 mb-8 brightness-0 invert">
+                <h1 class="text-5xl font-extrabold mb-6 leading-tight">Join the Future of Content Creation.</h1>
+                <p class="text-xl text-blue-100/80 mb-10 leading-relaxed">Create your account and start earning USDC. Experience total financial freedom with the power of Solana.</p>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <i class="fa-solid fa-user-shield text-2xl mb-3"></i>
+                        <h3 class="font-bold text-lg">Self-Custody</h3>
+                        <p class="text-sm opacity-70">Your money, your wallet. No bank middle-men involved.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <i class="fa-solid fa-coins text-2xl mb-3"></i>
+                        <h3 class="font-bold text-lg">Stable Earnings</h3>
+                        <p class="text-sm opacity-70">Get paid in USDC. Always 1:1 with the US Dollar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full md:w-1/2 lg:w-[45%] bg-white flex flex-col justify-center overflow-y-auto">
+            <div class="app-shell bg-white space-y-10">
+                <div class="flex justify-center mb-4">
+                    <img src="assets/images/logo.png" alt="OnlyStans Logo" class="w-[180px]">
+                </div>
+
+                <form id="registerForm" onsubmit="handleRegister(event)" class="space-y-5">
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Username</label>
+                        <input type="text" id="username" placeholder="Enter your username" required pattern="^[a-zA-Z0-9_]{3,}$"
+                            class="w-full p-4 border border-gray-200 rounded-xl outline-none focus:border-blue-500 transition bg-gray-50/30">
+                        <p class="error-text">Username must be at least 3 characters (letters, numbers, underscores only).</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+                        <div class="relative">
+                            <input type="password" id="password" placeholder="Enter your password" required minlength="6"
+                                class="w-full p-4 border border-gray-200 rounded-xl outline-none focus:border-blue-500 transition bg-gray-50/30">
+                            <button type="button" onclick="togglePassword()" class="absolute right-4 top-4 text-gray-400">
+                                <i id="eyeIcon" class="fas fa-eye-slash"></i>
+                            </button>
+                        </div>
+                        <p class="error-text">Password must be at least 6 characters.</p>
+                    </div>
+
+                    <div class="space-y-4 pt-2">
+    <div class="flex items-start space-x-3">
+        <input type="checkbox" id="agreeToTerms"
+            class="mt-1 w-5 h-5 shrink-0 rounded border-gray-300 text-blue-500 focus:ring-blue-500">
+        <p class="text-sm text-gray-600 leading-relaxed">
+            I have read and agree to your
+            <a href="terms-of-service.html" target="_blank" class="text-blue-500 font-bold">Terms of Service</a>
+            and
+            <a href="privacy-policy.html" target="_blank" class="text-blue-500 font-bold">Privacy Policy.</a>
+        </p>
+    </div>
+
+    <div class="flex items-start space-x-3">
+        <input type="checkbox" id="agreeToPolicy"
+            class="mt-1 w-5 h-5 shrink-0 rounded border-gray-300 text-blue-500 focus:ring-blue-500">
+        <p class="text-sm text-gray-600 leading-relaxed">
+            I understand that OnlyStans is not liable for my posted content. I agree to abide by the
+            <a href="content-policy.html" target="_blank" class="text-blue-500 font-bold">Content Policy.</a>
+        </p>
+    </div>
+</div>
+
+                    <div class="pt-6">
+                        <button type="submit" id="submitBtn"
+                            class="w-full bg-blue-500 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-blue-600 transition tracking-wide active:scale-[0.98]">
+                            REGISTER
+                        </button>
+                    </div>
+
+                    <div id="loader" class="hidden flex justify-center py-4">
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+                    </div>
+
+                    <div class="text-center pt-2">
+                        <a href="login.html" class="text-blue-500 text-sm font-medium hover:underline">
+                            Already have an account? Login
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Password Visibility Toggle
+        function togglePassword() {
+            const passInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            if (passInput.type === 'password') {
+                passInput.type = 'text';
+                eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
+            } else {
+                passInput.type = 'password';
+                eyeIcon.classList.replace('fa-eye', 'fa-eye-slash');
+            }
+        }
+
+        // Logic mirroring your Flutter _handleRegister()
+        function handleRegister(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const agreeToTerms = document.getElementById('agreeToTerms').checked;
+            const agreeToPolicy = document.getElementById('agreeToPolicy').checked;
+            const submitBtn = document.getElementById('submitBtn');
+            const loader = document.getElementById('loader');
+
+            if (!agreeToTerms) {
+                alert("You must agree to the Terms of Service and Privacy Policy to register.");
+                return;
+            }
+            if (!agreeToPolicy) {
+                alert("You must agree to the Content Policy to register.");
+                return;
+            }
+
+            submitBtn.innerText = "REGISTERING...";
+            submitBtn.disabled = true;
+            loader.classList.remove('hidden');
+
+            setTimeout(() => {
+                console.log("Registered with:", username);
+                window.location.href = "recovery_key.html";
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>
