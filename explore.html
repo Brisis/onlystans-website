@@ -1,67 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore - OnlyStans</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="icon" href="assets/images/icon.png" type="image/svg+xml">
-
+    <link rel="icon" href="assets/images/icon.png" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/grid-style.css">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f4f7f9; }
-        .main-container { max-width: 1280px; margin: 0 auto; }
-        
-        /* Grid Tile Styling */
-        .explore-tile {
-            position: relative;
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-            cursor: pointer;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9;
         }
-        .explore-tile img, .explore-tile video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+
+        .main-container {
+            max-width: 1280px;
+            margin: 0 auto;
         }
-        .explore-tile:hover img {
-            transform: scale(1.05);
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .tile-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.2);
-            opacity: 0;
-            transition: opacity 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        .explore-tile:hover .tile-overlay {
-            opacity: 1;
-        }
-        
-        /* Specific Locked Gradient */
-        .locked-tile {
-            background: linear-gradient(45deg, #4ba3e3, #2a6994);
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
+
 <body class="text-gray-900">
 
     <div class="main-container grid grid-cols-1 md:grid-cols-12 min-h-screen">
 
-        <aside class="hidden md:flex md:col-span-3 lg:col-span-3 flex-col sticky top-0 h-screen p-4 border-r border-gray-200 bg-white">
+        <aside
+            class="hidden md:flex md:col-span-3 lg:col-span-3 flex-col sticky top-0 h-screen p-4 border-r border-gray-200 bg-white">
             <div class="mb-8 px-2">
                 <img src="assets/images/logo.png" alt="OnlyStans" class="h-8">
             </div>
             <nav class="space-y-1 flex-1 font-semibold">
-                <a href="index.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                <a href="index.html"
+                    class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
                     <i class="fa-solid fa-house text-xl w-6"></i>
                     <span class="hidden lg:inline">Home</span>
                 </a>
@@ -69,23 +53,28 @@
                     <i class="fa-solid fa-magnifying-glass text-xl w-6"></i>
                     <span class="hidden lg:inline">Explore</span>
                 </a>
-                <a href="notifications.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                <a href="notifications.html"
+                    class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
                     <i class="fa-regular fa-bell text-xl w-6"></i>
                     <span class="hidden md:inline">Notifications</span>
                 </a>
-                <a href="subscriptions.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                <a href="subscriptions.html"
+                    class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
                     <i class="fa-solid fa-users text-xl w-6"></i>
                     <span class="hidden md:inline">Subscriptions</span>
                 </a>
-                <a href="tips.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                <a href="tips.html"
+                    class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
                     <i class="fa-solid fa-coins text-xl w-6"></i>
                     <span class="hidden md:inline">Tips</span>
                 </a>
-                <a href="bookmarks.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                <a href="bookmarks.html"
+                    class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
                     <i class="fa-regular fa-bookmark text-xl w-6"></i>
                     <span class="hidden md:inline">Bookmarks</span>
                 </a>
-                <a href="profile.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                <a href="profile.html"
+                    class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
                     <i class="fa-regular fa-user text-xl w-6"></i>
                     <span class="hidden md:inline">My profile</span>
                 </a>
@@ -94,7 +83,8 @@
                     <span class="hidden md:inline">More</span>
                 </a>
                 <div class="pt-4">
-                    <button class="w-full bg-blue-400 text-white rounded-full py-3 font-bold hover:bg-blue-500 shadow-md transition">
+                    <button
+                        class="w-full bg-blue-400 text-white rounded-full py-3 font-bold hover:bg-blue-500 shadow-md transition">
                         <span>
                             <i class="fa-solid fa-add text-md pr-6"></i>
                         </span>
@@ -105,14 +95,14 @@
         </aside>
 
         <main class="col-span-1 md:col-span-9 lg:col-span-9 bg-white min-h-screen">
-            
+
             <div class="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-100 p-4">
-                <div class="relative  mx-auto">
+                <div class="relative mx-auto">
                     <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                    <input type="text" placeholder="Search creators, hashtags, or content..." 
+                    <input type="text" placeholder="Search creators, hashtags, or content..."
                         class="w-full bg-gray-100 border-none rounded-xl py-3 pl-12 pr-4 focus:ring-2 focus:ring-blue-400 outline-none transition-all">
                 </div>
-                
+
                 <div class="flex space-x-6 mt-4 overflow-x-auto no-scrollbar text-sm font-semibold text-gray-500 px-2">
                     <button class="text-blue-500 border-b-2 border-blue-500 pb-2">All</button>
                     <button class="hover:text-gray-800 pb-2 whitespace-nowrap">Photos</button>
@@ -123,68 +113,102 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-3 gap-1 md:gap-2 p-1 md:p-4">
-                
-                <div class="explore-tile">
+            <div class="grid grid-cols-3 gap-0.5 md:gap-1 p-0.5 md:p-1">
+
+                <div class="grid-item group">
                     <img src="assets/images/characters/Marcus Rivera/marcus_post.jpeg" alt="Post">
+                    <div class="content-indicator">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
                     <div class="tile-overlay">
-                        <div class="flex space-x-4 font-bold">
+                        <div class="flex space-x-4 font-bold text-sm">
                             <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
                             <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="explore-tile">
-                    <div class="absolute top-2 right-2 text-white z-10 drop-shadow-md">
+                <div class="grid-item group">
+                    <img src="assets/images/characters/Maya Chen/maya_avatar.jpg" alt="Video Thumbnail">
+                    <div class="content-indicator">
                         <i class="fa-solid fa-video"></i>
                     </div>
-                    <img src="assets/images/characters/Maya Chen/maya_avatar.jpg" alt="Video Thumbnail">
-                    <div class="tile-overlay text-white">
-                        <i class="fa-solid fa-play text-3xl opacity-80"></i>
-                    </div>
-                </div>
-
-                <div class="explore-tile locked-tile">
-                    <div class="flex flex-col items-center justify-center h-full text-white">
-                        <i class="fa-solid fa-lock text-2xl mb-1"></i>
-                        <span class="text-[10px] font-bold uppercase tracking-widest">Locked</span>
-                    </div>
-                    <div class="tile-overlay bg-black/40 opacity-100 transition-none">
-                        <button class="bg-white text-blue-500 px-3 py-1 rounded-full text-xs font-bold shadow-lg">Unlock for $5</button>
-                    </div>
-                </div>
-
-                <div class="explore-tile">
-                    <img src="assets/images/characters/tina/6256efc8-fdd1-4db6-8d87-61690b29201f.png" alt="Post">
-                    <div class="tile-overlay"><i class="fa-solid fa-heart"></i></div>
-                </div>
-
-                <div class="explore-tile col-span-2 row-span-2"> <div class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded z-10">TRENDING</div>
-                    <img src="assets/images/characters/luna bloom/56733d34-1877-47fc-b17b-d354b71a2bbf.png" alt="Post">
                     <div class="tile-overlay">
-                        <div class="text-center">
-                            <p class="font-bold">@enigma_xena</p>
-                            <p class="text-xs">View exclusive set</p>
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="explore-tile">
-                    <div class="absolute top-2 right-2 text-white z-10"><i class="fa-solid fa-images"></i></div>
-                    <img src="assets/images/characters/Marcus Rivera/ca2c938500784f1b9bdb6ed727c1452e.jpg" alt="Gallery">
-                </div>
-
-                <div class="explore-tile locked-tile">
-                    <div class="flex flex-col items-center justify-center h-full text-white">
-                        <i class="fa-solid fa-video text-2xl mb-1"></i>
-                        <i class="fa-solid fa-lock text-sm"></i>
+                <div class="grid-item locked-tile group">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+                        <i class="fa-solid fa-lock text-2xl mb-1"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-widest">Locked</span>
+                    </div>
+                    <div class="content-indicator">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <div class="tile-overlay bg-black/40 opacity-100 transition-none">
+                        <button class="bg-white text-blue-500 px-3 py-1 rounded-full text-xs font-bold shadow-lg">Unlock
+                            for $5</button>
                     </div>
                 </div>
 
-                <div class="explore-tile"><img src="https://picsum.photos/seed/1/500/500" alt="Random"></div>
-                <div class="explore-tile"><img src="https://picsum.photos/seed/2/500/500" alt="Random"></div>
-                <div class="explore-tile"><img src="https://picsum.photos/seed/3/500/500" alt="Random"></div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/6/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-image"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/7/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-video"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/8/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-image"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/9/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-images"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/10/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-image"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/11/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-video"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
@@ -193,7 +217,8 @@
 
     </div>
 
-    <nav class="md:hidden fixed bottom-0 z-50 w-full bg-white border-t border-gray-100 px-6 py-3 flex justify-between items-center shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+    <nav
+        class="md:hidden fixed bottom-0 z-50 w-full bg-white border-t border-gray-100 px-6 py-3 flex justify-between items-center shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
         <a href="index.html"><i class="fa-solid fa-house text-xl text-gray-400"></i></a>
         <i class="fa-solid fa-magnifying-glass text-xl text-blue-500"></i>
         <div class="border-2 border-gray-900 rounded-lg h-7 w-7 flex items-center justify-center">
@@ -206,4 +231,5 @@
     </nav>
 
 </body>
+
 </html>

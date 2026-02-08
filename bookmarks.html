@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarks - OnlyStans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/grid-style.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f9; }
+        .main-container { max-width: 1280px; margin: 0 auto; }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <div class="main-container grid grid-cols-1 md:grid-cols-12 min-h-screen">
+
+        <aside class="hidden md:flex md:col-span-3 lg:col-span-3 flex-col sticky top-0 h-screen p-4 border-r border-gray-200 bg-white">
+            <div class="mb-8 px-2">
+                <img src="assets/images/logo.png" alt="OnlyStans" class="h-8">
+            </div>
+            <nav class="space-y-1 flex-1 font-semibold">
+                <a href="index.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-solid fa-house text-xl w-6"></i>
+                    <span class="hidden lg:inline">Home</span>
+                </a>
+                <a href="explore.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-solid fa-magnifying-glass text-xl w-6"></i>
+                    <span class="hidden md:inline">Explore</span>
+                </a>
+                <a href="notifications.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-regular fa-bell text-xl w-6"></i>
+                    <span class="hidden md:inline">Notifications</span>
+                </a>
+                <a href="subscriptions.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-solid fa-users text-xl w-6"></i>
+                    <span class="hidden md:inline">Subscriptions</span>
+                </a>
+                <a href="tips.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-solid fa-coins text-xl w-6"></i>
+                    <span class="hidden md:inline">Tips</span>
+                </a>
+                <a href="#" class="flex items-center space-x-4 p-3 rounded-full text-blue-500 bg-blue-50/50">
+                    <i class="fa-solid fa-bookmark text-xl w-6"></i>
+                    <span class="hidden md:inline">Bookmarks</span>
+                </a>
+                <a href="profile.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-regular fa-user text-xl w-6"></i>
+                    <span class="hidden md:inline">My profile</span>
+                </a>
+                <a href="#" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-solid fa-ellipsis-vertical text-xl w-6"></i>
+                    <span class="hidden md:inline">More</span>
+                </a>
+                <div class="pt-4">
+                    <button class="w-full bg-blue-400 text-white rounded-full py-3 font-bold hover:bg-blue-500 shadow-md transition">
+                        <span>
+                            <i class="fa-solid fa-add text-md pr-6"></i>
+                        </span>
+                        <span class="hidden md:inline uppercase tracking-tighter">New Post</span>
+                    </button>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="col-span-1 md:col-span-9 lg:col-span-9 bg-white min-h-screen">
+            
+            <header class="sticky top-0 z-20 bg-white/90 backdrop-blur-md border-b border-gray-100 p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-xl font-bold">Bookmarks</h1>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    12 Items
+                </div>
+            </header>
+
+            <div class="grid grid-cols-3 gap-0.5 md:gap-1">
+                
+               <div class="grid-item"><img src="https://picsum.photos/seed/6/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-image"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/7/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-video"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/8/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-image"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/9/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-images"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/10/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-image"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/11/400/400">
+                    <div class="content-indicator"><i class="fa-solid fa-video"></i></div>
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hidden flex flex-col items-center justify-center py-20 px-6 text-center">
+                <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-bookmark text-3xl text-gray-300"></i>
+                </div>
+                <h2 class="text-xl font-bold">No bookmarks yet</h2>
+                <p class="text-gray-500 text-sm mt-2">Posts you bookmark will appear here for quick access.</p>
+            </div>
+
+        </main>
+
+        <!-- <aside class="hidden lg:flex lg:col-span-3 flex-col sticky top-0 h-screen p-4">
+            <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
+                <h3 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-4">Filter by Type</h3>
+                <div class="space-y-2">
+                    <button class="w-full text-left px-3 py-2 rounded-lg bg-blue-50 text-blue-600 font-bold text-sm">All Content</button>
+                    <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-600 text-sm">Photos</button>
+                    <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-600 text-sm">Videos</button>
+                    <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-600 text-sm">Locked Posts</button>
+                </div>
+            </div>
+        </aside> -->
+
+        <nav class="md:hidden fixed bottom-0 z-50 w-full bg-white border-t border-gray-100 px-6 py-3 flex justify-between items-center">
+            <a href="index.html"><i class="fa-solid fa-house text-xl text-gray-400"></i></a>
+            <a href="explore.html"><i class="fa-solid fa-magnifying-glass text-xl text-gray-400"></i></a>
+            <div class="bg-gray-900 rounded-lg h-8 w-8 flex items-center justify-center text-white">
+                <i class="fa-solid fa-plus text-lg"></i>
+            </div>
+            <a href="bookmarks.html"><i class="fa-solid fa-bookmark text-xl text-blue-500"></i></a>
+            <div class="w-8 h-8 rounded-full bg-gray-200"></div>
+        </nav>
+
+    </div>
+
+</body>
+</html>
