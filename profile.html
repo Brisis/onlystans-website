@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - OnlyStans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/grid-style.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f9; }
+        .main-container { max-width: 1280px; margin: 0 auto; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+
+        .tab-active { border-bottom: 2px solid #000; color: #000; }
+        
+        /* Dropdown styling */
+        .settings-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            width: 220px;
+            z-index: 50;
+            border: 1px solid #f0f0f0;
+        }
+        .menu-trigger:focus-within .settings-menu { display: block; }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <div class="main-container grid grid-cols-1 md:grid-cols-12 min-h-screen">
+
+        <aside class="hidden md:flex md:col-span-3 lg:col-span-3 flex-col sticky top-0 h-screen p-4 border-r border-gray-200 bg-white">
+            <div class="mb-8 px-2">
+                <img src="assets/images/logo.png" alt="OnlyStans" class="h-8">
+            </div>
+            <nav class="space-y-1 flex-1 font-semibold">
+                <a href="index.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-solid fa-house text-xl w-6"></i>
+                    <span class="hidden lg:inline">Home</span>
+                </a>
+                <a href="explore.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-solid fa-magnifying-glass text-xl w-6"></i>
+                    <span class="hidden lg:inline">Explore</span>
+                </a>
+                <a href="notifications.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-regular fa-bell text-xl w-6"></i>
+                    <span class="hidden lg:inline">Notifications</span>
+                </a>
+                <a href="subscriptions.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-solid fa-users text-xl w-6"></i>
+                    <span class="hidden lg:inline">Subscriptions</span>
+                </a>
+                 <a href="tips.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-solid fa-coins text-xl w-6"></i>
+                    <span class="hidden md:inline">Tips</span>
+                </a>
+                <a href="bookmarks.html" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-regular fa-bookmark text-xl w-6"></i>
+                    <span class="hidden md:inline">Bookmarks</span>
+                </a>
+                <a href="#" class="flex items-center space-x-4 p-3 rounded-full text-blue-500 bg-blue-50/50">
+                    <i class="fa-solid fa-user text-xl w-6"></i>
+                    <span class="hidden md:inline">My profile</span>
+                </a>
+                <a href="#" class="flex items-center space-x-4 p-3 rounded-full text-gray-700 hover:bg-gray-100">
+                    <i class="fa-solid fa-ellipsis-vertical text-xl w-6"></i>
+                    <span class="hidden md:inline">More</span>
+                </a>
+                <div class="pt-4">
+                    <button class="w-full bg-blue-400 text-white rounded-full py-3 font-bold hover:bg-blue-500 shadow-md transition">
+                        <i class="fa-solid fa-add lg:pr-2"></i>
+                        <span class="hidden lg:inline uppercase tracking-tighter">New Post</span>
+                    </button>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="col-span-1 md:col-span-9 lg:col-span-9 bg-white min-h-screen border-r border-gray-200">
+            
+            <header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100 p-4 flex justify-between items-center">
+                <h1 class="text-lg font-bold">marcus_rivera</h1>
+                <div class="relative menu-trigger">
+                    <button class="p-2 hover:bg-gray-100 rounded-full outline-none">
+                        <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
+                    </button>
+                    <div class="settings-menu py-2 overflow-hidden">
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-sm font-medium">
+                            <i class="fa-regular fa-circle-user w-5"></i> <span>Edit Profile</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-sm font-medium">
+                            <i class="fa-solid fa-hand-holding-dollar w-5"></i> <span>Payment Settings</span>
+                        </a>
+                        <a href="subscriptions.html" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-sm font-medium">
+                            <i class="fa-solid fa-users-gear w-5"></i> <span>Manage Subscriptions</span>
+                        </a>
+                        <a href="tips.html" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-sm font-medium">
+                            <i class="fa-solid fa-coins w-5"></i> <span>Manage Tips</span>
+                        </a>
+                        <a href="bookmarks.html" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-sm font-medium">
+                            <i class="fa-regular fa-bookmark w-5"></i> <span>Bookmarks</span>
+                        </a>
+                        <div class="border-t border-gray-100 my-1"></div>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-sm font-medium text-red-500">
+                            <i class="fa-solid fa-arrow-right-from-bracket w-5"></i> <span>Sign Out</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="p-4 md:p-8">
+                <div class="flex items-center space-x-6">
+                    <div class="relative">
+                        <img src="assets/images/characters/Marcus Rivera/marcus_avatar.jpeg" class="w-24 h-24 rounded-full border-4 border-white shadow-sm object-cover">
+                    </div>
+                    
+                    <div class="flex-1">
+                        <h2 class="text-xl font-extrabold">Marcus Rivera</h2>
+                        <div class="flex justify-between mt-4 text-center">
+                            <div>
+                                <p class="text-sm font-black">24</p>
+                                <p class="text-[10px] uppercase text-gray-400 font-bold">Images</p>
+                            </div>
+                            <div>
+                                <p class="text-sm font-black">12</p>
+                                <p class="text-[10px] uppercase text-gray-400 font-bold">Videos</p>
+                            </div>
+                            <div>
+                                <p class="text-sm font-black">1.2k</p>
+                                <p class="text-[10px] uppercase text-gray-400 font-bold">Followers</p>
+                            </div>
+                            <div>
+                                <p class="text-sm font-black">85</p>
+                                <p class="text-[10px] uppercase text-gray-400 font-bold">Subs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="px-6 py-4 border-t border-gray-50">
+                <h3 class="text-xs font-black uppercase text-gray-400 tracking-widest mb-2">What I do</h3>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                    Personal trainer and culinary enthusiast. Sharing my journey through fitness and gourmet healthy cooking. 🥗💪
+                </p>
+            </section>
+
+            <section>
+                <div class="flex border-t border-gray-100">
+                    <button class="flex-1 py-4 flex justify-center items-center tab-active">
+                        <i class="fa-solid fa-grid-2 text-lg"></i>
+                        <span class="ml-2 text-xs font-bold uppercase hidden sm:inline">Images</span>
+                    </button>
+                    <button class="flex-1 py-4 flex justify-center items-center text-gray-400 hover:text-gray-600">
+                        <i class="fa-solid fa-video text-lg"></i>
+                        <span class="ml-2 text-xs font-bold uppercase hidden sm:inline">Videos</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-3 gap-0.5">
+                    <div class="grid-item"><img src="https://picsum.photos/seed/6/400/400">
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/7/400/400">
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/8/400/400">
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item"><img src="https://picsum.photos/seed/9/400/400">
+                    <div class="tile-overlay">
+                        <div class="flex space-x-4 font-bold text-sm">
+                            <span><i class="fa-solid fa-heart mr-1"></i> 1.2k</span>
+                            <span><i class="fa-solid fa-comment mr-1"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="hidden flex flex-col items-center justify-center py-20 text-gray-400">
+                    <i class="fa-regular fa-image text-5xl mb-4 opacity-20"></i>
+                    <p class="text-sm font-medium">No images yet</p>
+                </div>
+            </section>
+        </main>
+
+        <nav class="md:hidden fixed bottom-0 z-50 w-full bg-white border-t border-gray-100 px-6 py-3 flex justify-between items-center">
+            <a href="index.html"><i class="fa-solid fa-house text-xl text-gray-400"></i></a>
+            <a href="explore.html"><i class="fa-solid fa-magnifying-glass text-xl text-gray-400"></i></a>
+            <div class="bg-gray-900 rounded-lg h-8 w-8 flex items-center justify-center text-white">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <a href="bookmarks.html"><i class="fa-solid fa-bookmark text-xl text-gray-400"></i></a>
+            <a href="profile.html"><i class="fa-solid fa-user text-xl text-blue-500"></i></a>
+        </nav>
+
+    </div>
+
+</body>
+</html>
